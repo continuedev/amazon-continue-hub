@@ -1,0 +1,17 @@
+name: Claude 3.5 Haiku
+version: '1'
+schema: v1
+models:
+  - name: Claude 3.5 Haiku
+    provider: bedrock
+    model: anthropic.claude-3-5-haiku-20241022-v1:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 200000
+    capabilities:
+      - tool_use

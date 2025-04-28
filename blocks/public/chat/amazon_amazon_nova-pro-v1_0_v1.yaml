@@ -1,0 +1,17 @@
+name: Amazon Nova Pro
+version: '1'
+schema: v1
+models:
+  - name: Amazon Nova Pro
+    provider: bedrock
+    model: amazon.nova-pro-v1:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 32000
+    capabilities:
+      - tool_use

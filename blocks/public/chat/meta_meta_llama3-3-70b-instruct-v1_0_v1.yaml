@@ -1,0 +1,15 @@
+name: Llama 3.3 70B Instruct
+version: '1'
+schema: v1
+models:
+  - name: Llama 3.3 70B Instruct
+    provider: bedrock
+    model: meta.llama3-3-70b-instruct-v1:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 128000

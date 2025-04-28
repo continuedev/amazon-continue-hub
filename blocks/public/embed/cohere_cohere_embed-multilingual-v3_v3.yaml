@@ -1,0 +1,13 @@
+name: Cohere Embed Multilingual
+version: '3'
+schema: v1
+models:
+  - name: Cohere Embed Multilingual
+    provider: bedrock
+    model: cohere.embed-multilingual-v3
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - embed
+    defaultCompletionOptions:
+      contextLength: 512

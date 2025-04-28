@@ -1,0 +1,17 @@
+name: Mistral Small (24.02)
+version: '1'
+schema: v1
+models:
+  - name: Mistral Small (24.02)
+    provider: bedrock
+    model: mistral.mistral-small-2402-v1:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 32768
+    capabilities:
+      - tool_use

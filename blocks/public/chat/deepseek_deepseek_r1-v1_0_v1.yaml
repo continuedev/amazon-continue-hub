@@ -1,0 +1,15 @@
+name: DeepSeek-R1
+version: '1'
+schema: v1
+models:
+  - name: DeepSeek-R1
+    provider: bedrock
+    model: deepseek.r1-v1:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 128000

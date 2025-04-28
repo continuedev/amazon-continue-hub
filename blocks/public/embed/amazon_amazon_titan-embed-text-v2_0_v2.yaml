@@ -1,0 +1,13 @@
+name: Amazon Titan Text Embeddings V2
+version: '2'
+schema: v1
+models:
+  - name: Amazon Titan Text Embeddings V2
+    provider: bedrock
+    model: amazon.titan-embed-text-v2:0
+    region: ${{ input.AWS_REGION }}
+    profile: ${{ input.AWS_PROFILE }}
+    roles:
+      - embed
+    defaultCompletionOptions:
+      contextLength: 8192
